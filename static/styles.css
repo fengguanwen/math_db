@@ -1,0 +1,124 @@
+/* 自定义样式 */
+body {
+  font-family: 'Noto Sans', sans-serif; /* 使用简洁的字体 */
+  color: #555; /* 柔和的黑灰色字体 */
+  background-color: #f0f0f0; /* 柔和的背景色 */
+}
+
+.section {
+  text-align: center;
+  /* padding: 50px 20px; */
+  /* background: #f5f5f5; 默认浅色背景 */
+  /* border-bottom: 1px solid #e0e0e0; */
+  background-image: linear-gradient(128deg,#40afff,#3f61ff);
+}
+
+.section h3 {
+  margin-bottom: 20px;
+  color: #333; /* 深色标题 */
+  font-weight: normal;
+  font-size: 2em; /* 数学题目文字变大 */
+  color: #f8f8ff; /* 象牙白 */
+}
+
+.section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.section li {
+  cursor: pointer;
+  margin: 30px 10px;
+  font-size: 1.5em; /* 选项文字变大 */
+  color: #f8f8ff; /* 象牙白 */
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明背景色 */
+  padding: 10px 20px; /* 内边距 */
+  border-radius: 5px; /* 圆角 */
+  transition: background-color 0.3s ease; /* 背景色过渡效果 */
+}
+
+.section li:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* 鼠标悬停时的背景色 */
+  transform: translateY(-5px); /* 向上偏移 5px */
+}
+
+/* .section li.selected {
+  font-weight: bold;
+  color: #03bb1b; 
+} */
+
+.section li.selected {
+  font-weight: bold;
+  color: #ffd700; /* 选中选项的颜色，金色 */
+  background-color: rgba(0, 0, 0, 0.7); /* 选中选项的背景色 */
+}
+
+.option-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.selected-answer {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #777; /* 淡灰色字体 */
+}
+
+.section button {
+  padding: 10px 20px;
+  background-color: #555; /* 深色按钮 */
+  color: #fff; /* 白色文字 */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.section button:hover {
+  background-color: #777; /* 更深色按钮 */
+}
+
+.section .result {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #fff; /* 白色背景 */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 浅阴影 */
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #f8f8ff; /* 象牙白 */
+}
+
+@media (max-width: 600px) {
+  .section {
+      padding: 30px 10px;
+  }
+
+  li {
+      margin: 5px;
+      padding: 8px 15px;
+  }
+}
+
+/* 调整每个section的背景 */
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  color: #333; /* 黑灰色字体 */
+}
+
+.result-correct {
+  color: rgb(255, 255, 255); /* 绿绿色 */
+}
+
+.result-incorrect {
+  color: rgb(0, 0, 0); /* 黑红色 */
+}
