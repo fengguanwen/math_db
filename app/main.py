@@ -1,25 +1,11 @@
+from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pathlib import Path
-from fastapi import FastAPI, HTTPException, Depends
-from sqlalchemy.orm import Session
 import json
-from .database import SessionLocal, engine, init_db
-from .models import Base, User, MathQuestion
 
 app = FastAPI()
 
-# Initialize the database
-init_db()
-
-# Dependency to get the database session
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
-        
 # 静态文件目录
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
