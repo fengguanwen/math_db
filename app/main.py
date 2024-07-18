@@ -3,6 +3,15 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pathlib import Path
 import json
+#------ for db
+from typing import List
+from fastapi import Depends
+from app import crud
+from app import models
+from app import schemas
+from app.database import SessionLocal, engine
+import uvicorn
+#------
 
 app = FastAPI()
 
@@ -17,6 +26,16 @@ try:
 except Exception as e:
     print(f"Error loading math questions: {e}")
     math_questions = []
+
+
+# Dependency
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
 
 @app.get("/api/math-questions")
 async def get_math_questions():
